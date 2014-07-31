@@ -31,17 +31,17 @@ namespace BowlingGame
             {
                 if (isStrike(position))
                 {
-                    totalPins += 10 + rolls[position + 1] + rolls[position + 2];
+                    totalPins += 10 + strikeBonus(position);
                     position++;
                 }
                 else if (isSpare(position))
                 {
-                    totalPins += 10 + rolls[position + 2];
+                    totalPins += 10 + spareBonus(position);
                     position += 2;
                 }
                 else
                 {
-                    totalPins += rolls[position] + rolls[position + 1];
+                    totalPins += pinsAtFrame(position);
                     position += 2;
                 }
             }
@@ -56,6 +56,21 @@ namespace BowlingGame
         public bool isStrike(int currentPosition)
         {
             return rolls[currentPosition] == 10;
+        }
+
+        public int spareBonus(int position)
+        {
+            return rolls[position + 2];
+        }
+
+        public int strikeBonus(int position)
+        {
+            return rolls[position + 1] + rolls[position + 2];
+        }
+
+        public int pinsAtFrame(int position)
+        {
+            return rolls[position] + rolls[position + 1];
         }
     }
 }
