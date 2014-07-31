@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BowlingGame;
 
 namespace UnitTestProject
 {
@@ -7,8 +8,11 @@ namespace UnitTestProject
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestGame()
         {
+            Game game = new Game();
+
+
         }
     }
 }
