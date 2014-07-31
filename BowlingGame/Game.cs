@@ -47,5 +47,7 @@ namespace BowlingGame
         {
             return rolls[currentPosition] + rolls[currentPosition+1] == 10;
         }
+
+        
     }
 }

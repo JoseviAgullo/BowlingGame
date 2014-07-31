@@ -46,9 +46,19 @@ namespace UnitTestProject
             game.roll(5);
             game.roll(6);
             rollMany(17, 0);
+
             Assert.AreEqual(22, game.score());
         }
 
-        
+        [TestMethod]
+        public void testStrike()
+        {
+            game.roll(10);
+            game.roll(3);
+            game.roll(5);
+            rollMany(17, 0);
+
+            Assert.AreEqual(26, game.score());
+        }
     }
 }
