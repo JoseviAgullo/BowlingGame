@@ -29,7 +29,12 @@ namespace BowlingGame
             int position = 0;
             for (int frame = 0; frame < 10; frame++)
             {
-                if (isSpare(position))
+                if (isStrike(position))
+                {
+                    totalPins += 10 + rolls[position + 1] + rolls[position + 2];
+                    position++;
+                }
+                else if (isSpare(position))
                 {
                     totalPins += 10 + rolls[position + 2];
                     position += 2;
@@ -48,6 +53,9 @@ namespace BowlingGame
             return rolls[currentPosition] + rolls[currentPosition+1] == 10;
         }
 
-        
+        public bool isStrike(int currentPosition)
+        {
+            return rolls[currentPosition] == 10;
+        }
     }
 }

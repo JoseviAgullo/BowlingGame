@@ -56,7 +56,7 @@ namespace UnitTestProject
             game.roll(10);
             game.roll(3);
             game.roll(5);
-            rollMany(17, 0);
+            rollMany(16, 0);
 
             Assert.AreEqual(26, game.score());
         }
