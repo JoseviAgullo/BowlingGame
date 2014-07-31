@@ -23,6 +23,17 @@ namespace UnitTestProject
             }
         }
 
+        private void rollSpare()
+        {
+            game.roll(5);
+            game.roll(5);
+        }
+
+        private void rollStrike()
+        {
+            game.roll(10);
+        }
+
         [TestMethod]
         public void testGutterGame()
         {
@@ -42,8 +53,7 @@ namespace UnitTestProject
         [TestMethod]
         public void testSpare()
         {
-            game.roll(5);
-            game.roll(5);
+            rollSpare();
             game.roll(6);
             rollMany(17, 0);
 
@@ -53,7 +63,7 @@ namespace UnitTestProject
         [TestMethod]
         public void testStrike()
         {
-            game.roll(10);
+            rollStrike();
             game.roll(3);
             game.roll(5);
             rollMany(16, 0);
