@@ -8,6 +8,7 @@ namespace BowlingGame
 {
     public class Game
     {
+        private int totalPins = 0;
 
         static void Main(string[] args)
         {
@@ -15,12 +16,12 @@ namespace BowlingGame
 
         public void roll(int pins)
         {
-
+            totalPins += pins;
         }
 
         public int score()
         {
-            return 0;
+            return totalPins;
         }
     }
 }
