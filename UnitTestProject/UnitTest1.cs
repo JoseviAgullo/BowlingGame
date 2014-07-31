@@ -38,7 +38,7 @@ namespace UnitTestProject
 
             Assert.AreEqual(80, game.score());
         }
-        /*
+        
         [TestMethod]
         public void testSpare()
         {
@@ -47,7 +47,7 @@ namespace UnitTestProject
             game.roll(6);
             rollMany(17, 0);
             Assert.AreEqual(22, game.score());
-        }*/
+        }
 
         
     }
