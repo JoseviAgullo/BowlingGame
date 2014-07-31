@@ -7,14 +7,18 @@ namespace UnitTestProject
     [TestClass]
     public class UnitTest1
     {
+        private Game game;
+
+        [TestInitialize]
+        public void setUp()
+        {
+            game = new Game();
+        }
+
         [TestMethod]
         public void testGutterGame()
         {
-            Game game = new Game();
-            for (int i = 0; i < 20; i++)
-            {
-                game.roll(0);
-            }
+            rollMany(20, 0);
 
             Assert.AreEqual(0, game.score());
         }
@@ -22,14 +26,17 @@ namespace UnitTestProject
         [TestMethod]
         public void testAllFour()
         {
-            Game game = new Game();
-
-            for (int i = 0; i < 20; i++)
-            {
-                game.roll(4);
-            }
+            rollMany(20, 4);
 
             Assert.AreEqual(80, game.score());
+        }
+
+        private void rollMany(int times, int pins)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                game.roll(pins);
+            }
         }
     }
 }
