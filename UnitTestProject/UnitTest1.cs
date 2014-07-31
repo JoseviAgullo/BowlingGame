@@ -15,6 +15,14 @@ namespace UnitTestProject
             game = new Game();
         }
 
+        private void rollMany(int times, int pins)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                game.roll(pins);
+            }
+        }
+
         [TestMethod]
         public void testGutterGame()
         {
@@ -30,13 +38,17 @@ namespace UnitTestProject
 
             Assert.AreEqual(80, game.score());
         }
-
-        private void rollMany(int times, int pins)
+        /*
+        [TestMethod]
+        public void testSpare()
         {
-            for (int i = 0; i < times; i++)
-            {
-                game.roll(pins);
-            }
-        }
+            game.roll(5);
+            game.roll(5);
+            game.roll(6);
+            rollMany(17, 0);
+            Assert.AreEqual(22, game.score());
+        }*/
+
+        
     }
 }

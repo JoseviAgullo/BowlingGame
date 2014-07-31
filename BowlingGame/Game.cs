@@ -10,17 +10,26 @@ namespace BowlingGame
     {
         private int totalPins = 0;
 
+        private int[] rolls = new int[21];
+        private int currentRoll = 0;
+
         static void Main(string[] args)
         {
         }
 
         public void roll(int pins)
         {
-            totalPins += pins;
+            rolls[currentRoll] = pins;
+            currentRoll++;
         }
 
         public int score()
         {
+            int totalPins = 0;
+            for (int i = 0; i < rolls.Length; i++)
+            {
+                totalPins += rolls[i];
+            }
             return totalPins;
         }
     }
