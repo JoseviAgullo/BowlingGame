@@ -26,11 +26,26 @@ namespace BowlingGame
         public int score()
         {
             int totalPins = 0;
-            for (int i = 0; i < rolls.Length; i++)
+            int position = 0;
+            for (int frame = 0; frame < 10; frame++)
             {
-                totalPins += rolls[i];
+                if (isSpare(position))
+                {
+                    totalPins += 10 + rolls[position + 2];
+                    position += 2;
+                }
+                else
+                {
+                    totalPins += rolls[position] + rolls[position + 1];
+                    position += 2;
+                }
             }
             return totalPins;
+        }
+
+        public bool isSpare(int currentPosition)
+        {
+            return rolls[currentPosition] + rolls[currentPosition+1] == 10;
         }
     }
 }
