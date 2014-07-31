@@ -93,6 +93,26 @@ namespace UnitTestProject
         }
 
         [TestMethod]
+        public void testSpareLastRollLastFrame()
+        {
+            rollMany(18, 0);
+            rollStrike();
+            rollSpare();
+
+            Assert.AreEqual(20, game.score());
+        }
+
+        [TestMethod]
+        public void testStrikeLastRollLastFrame()
+        {
+            rollMany(18, 0);
+            rollSpare();
+            rollStrike();
+
+            Assert.AreEqual(20, game.score());
+        }
+
+        [TestMethod]
         public void testPerfectGame()
         {
             rollMany(12, 10);
