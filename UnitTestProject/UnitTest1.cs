@@ -12,7 +12,9 @@ namespace UnitTestProject
         {
             Game game = new Game();
 
+            game.roll(0);
 
+            Assert.AreEqual(0, game.score());
         }
     }
 }

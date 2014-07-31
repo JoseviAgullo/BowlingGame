@@ -8,8 +8,19 @@ namespace BowlingGame
 {
     public class Game
     {
+
         static void Main(string[] args)
         {
+        }
+
+        public void roll(int pins)
+        {
+
+        }
+
+        public int score()
+        {
+            return 0;
         }
     }
 }
