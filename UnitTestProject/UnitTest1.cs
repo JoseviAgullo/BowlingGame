@@ -70,5 +70,60 @@ namespace UnitTestProject
 
             Assert.AreEqual(26, game.score());
         }
+
+        [TestMethod]
+        public void testSpareLastFrame()
+        {
+            rollMany(18, 0);
+            rollSpare();
+            game.roll(5);
+
+            Assert.AreEqual(15, game.score());
+        }
+
+        [TestMethod]
+        public void testStrikeLastFrame()
+        {
+            rollMany(18, 0);
+            rollStrike();
+            game.roll(5);
+            game.roll(4);
+
+            Assert.AreEqual(19, game.score());
+        }
+
+        [TestMethod]
+        public void testPerfectGame()
+        {
+            rollMany(12, 10);
+
+            Assert.AreEqual(300, game.score());
+        }
+
+        [TestMethod]
+        public void testRealGame()
+        {
+            game.roll(1);
+            game.roll(4);
+            game.roll(4);
+            game.roll(5);            
+            game.roll(6);
+            game.roll(4);
+            game.roll(5);
+            game.roll(5);
+            rollStrike();
+            game.roll(0);
+            game.roll(1);
+            game.roll(7);
+            game.roll(3);
+            game.roll(6);
+            game.roll(4);
+            rollStrike();
+            game.roll(2);
+            game.roll(8);
+            game.roll(6);
+
+            Assert.AreEqual(133, game.score());
+        }
     }
 }
