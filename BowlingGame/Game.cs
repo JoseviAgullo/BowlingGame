@@ -9,7 +9,6 @@ namespace BowlingGame
     public class Game
     {        
         private List<int> rolls = new List<int>();
-        private int currentRoll = 0;
 
         static void Main(string[] args)
         {
@@ -17,8 +16,7 @@ namespace BowlingGame
 
         public void roll(int pins)
         {            
-            rolls.Add(pins);
-            currentRoll++;
+            rolls.Add(pins);            
         }
 
         public int score()
